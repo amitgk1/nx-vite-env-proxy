@@ -1,0 +1,26 @@
+{
+  "name": "@nx-vite-env-proxy/vite-plugin-proxy",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/vite-plugin-proxy/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/vite-plugin-proxy/**/*.ts"]
+      }
+    },
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/vite-plugin-proxy",
+        "main": "libs/vite-plugin-proxy/src/index.ts",
+        "tsConfig": "libs/vite-plugin-proxy/tsconfig.lib.json",
+        "assets": []
+      }
+    }
+  },
+  "tags": []
+}
